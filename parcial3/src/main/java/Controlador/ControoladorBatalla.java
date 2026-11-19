@@ -11,4 +11,5 @@ import Modelo.historialBatalla;
  */
 public class ControoladorBatalla {
     
+    private historialBatalla historial = new historialBatalla();
 }
