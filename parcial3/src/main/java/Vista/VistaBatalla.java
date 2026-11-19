@@ -16,21 +16,18 @@ public class VistaBatalla extends javax.swing.JFrame {
     private JLabel lblLP1;
     private JLabel lblLP2;
     private JTextArea txtHistorial;
-    private JScrollPane scrollHistorial; 
+    private JScrollPane scrollHistorial;
     
     public VistaBatalla() {
-        // Configuración básica de la ventana
+        // 2. Esta línea es OBLIGATORIA para que NetBeans no marque error en el JFrame Form
+        initComponents(); 
+        
+        // 3. Configuración de nuestra ventana manual (después del initComponents)
         setTitle("Simulador de Batalla Yu-Gi-Oh!");
         setSize(400, 300);
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLayout(new FlowLayout());
         
         btnAtacar = new JButton("Atacar");
-        lblLP1 = new JLabel("LP Jugador 1: 0");
-        lblLP2 = new JLabel("LP Jugador 2: 0");
-        txtHistorial = new JTextArea(10, 30);
-        txtHistorial.setEditable(false);
-        scrollHistorial = new JScrollPane(txtHistorial);btnAtacar = new JButton("Atacar");
         lblLP1 = new JLabel("LP Jugador 1: 0");
         lblLP2 = new JLabel("LP Jugador 2: 0");
         txtHistorial = new JTextArea(10, 30);
@@ -43,6 +40,7 @@ public class VistaBatalla extends javax.swing.JFrame {
         add(scrollHistorial);
     }
     
+    // 4. Métodos del UML
     public void agregarListener(ActionListener l) {
         btnAtacar.addActionListener(l);
     }
@@ -55,10 +53,6 @@ public class VistaBatalla extends javax.swing.JFrame {
         lblLP1.setText("LP Jugador 1: " + lp1);
         lblLP2.setText("LP Jugador 2: " + lp2);
     }
-
-    /**
-     * Creates new form VistaBatalla
-     */
 
 
     /**
