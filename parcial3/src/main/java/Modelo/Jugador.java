@@ -18,5 +18,10 @@ public class Jugador {
         cartas.add(m);
         System.out.println(m.getNombre()+ "ha sido agregada con exito a tu baraja "+ nombre);
     }
-
+    
+    public void recibirDanio(int cantidad){
+        this.Lp -= cantidad;
+        System.out.println(nombre + " recibe " + cantidad + " de daño. LP restantes: " + this.Lp);
+        
+    }
 }
