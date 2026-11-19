@@ -12,7 +12,13 @@ import java.awt.event.ActionListener;
  */
 public class VistaBatalla extends javax.swing.JFrame {
     
-    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(VistaBatalla.class.getName());
+    private JButton btnAtacar;
+    private JLabel lblLP1;
+    private JLabel lblLP2;
+    private JTextArea txtHistorial;
+    private JScrollPane scrollHistorial; 
+    
+    
 
     /**
      * Creates new form VistaBatalla
