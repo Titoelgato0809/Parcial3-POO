@@ -36,6 +36,11 @@ public class VistaBatalla extends javax.swing.JFrame {
         txtHistorial = new JTextArea(10, 30);
         txtHistorial.setEditable(false);
         scrollHistorial = new JScrollPane(txtHistorial);
+        add(lblLP1);
+        add(lblLP2);
+        add(btnAtacar);
+        add(scrollHistorial);
+    }
 
     /**
      * Creates new form VistaBatalla
