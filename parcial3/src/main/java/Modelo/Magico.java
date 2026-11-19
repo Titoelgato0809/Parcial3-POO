@@ -16,4 +16,8 @@ public class Magico extends Monstruo{
         System.out.println(nombre +"ataca con:"+ ATQ +" de daño");
     }
     
+    public void atacar(int bono) {
+        int ataqueTotal = ATQ + bono;
+        System.out.println(nombre + " realiza un ataque mágico potenciado. Daño total: " + ataqueTotal);
+    }
 }
