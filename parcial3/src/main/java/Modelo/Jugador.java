@@ -13,4 +13,10 @@ public class Jugador {
     public String nombre;
     public int Lp;
     List<Monstruo> cartas = new ArrayList<>();
+    
+    public void agrgarCarta(Monstruo m){
+        cartas.add(m);
+        System.out.println(m.getNombre()+ "ha sido agregada con exito a tu baraja "+ nombre);
+    }
+
 }
