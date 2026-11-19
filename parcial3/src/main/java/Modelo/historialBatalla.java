@@ -11,4 +11,13 @@ import java.util.List;
  */
 public class historialBatalla {
     private List<String> registros = new ArrayList<>();
+    
+    public void registrar(String lineas) {
+        registros.add(lineas);
+        System.out.println("Registro añadido: " + lineas);
+    }
+
+    public void guardar() {
+        System.out.println("Guardando historial de batalla en archivo .txt...");
+    }
 }
