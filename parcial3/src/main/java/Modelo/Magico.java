@@ -11,6 +11,9 @@ import Modelo.Monstruo;
 public class Magico extends Monstruo{
     public String efecto;
 
-
+    @Override
+    public void atacar(){
+        System.out.println(nombre +"ataca con:"+ ATQ +" de daño");
+    }
     
 }
