@@ -12,16 +12,15 @@ import java.util.ArrayList;
 public class Jugador {
     public String nombre;
     public int Lp;
-    List<Monstruo> cartas = new ArrayList<>();
-    
-    public void agrgarCarta(Monstruo m){
+    public List<Monstruo> cartas = new ArrayList<>();
+
+    public void agregarCarta(Monstruo m) {
         cartas.add(m);
-        System.out.println(m.getNombre()+ "ha sido agregada con exito a tu baraja "+ nombre);
+        System.out.println(m.getNombre() + " ha sido agregado a las cartas de " + nombre);
     }
-    
-    public void recibirDanio(int cantidad){
+
+    public void recibirDanio(int cantidad) {
         this.Lp -= cantidad;
         System.out.println(nombre + " recibe " + cantidad + " de daño. LP restantes: " + this.Lp);
-        
     }
 }
