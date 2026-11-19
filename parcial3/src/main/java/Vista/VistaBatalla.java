@@ -3,8 +3,6 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package Vista;
-import javax.swing.*;
-import java.awt.*;
 import java.awt.event.ActionListener;
 /**
  *
@@ -14,49 +12,29 @@ public class VistaBatalla extends javax.swing.JFrame {
    
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(VistaBatalla.class.getName());
     
-    private JButton btnAtacar;
-    private JLabel lblLP1;
-    private JLabel lblLP2;
-    private JTextArea txtHistorial;
-    private JScrollPane scrollHistorial;
-    
     public VistaBatalla() {
-        // 2. Esta línea es OBLIGATORIA para que NetBeans no marque error en el JFrame Form
         initComponents(); 
-        
-        // 3. Configuración de nuestra ventana manual (después del initComponents)
-        setTitle("Simulador de Batalla Yu-Gi-Oh!");
-        setSize(400, 300);
-        setLayout(new FlowLayout());
-        
-        btnAtacar = new JButton("Atacar");
-        lblLP1 = new JLabel("LP Jugador 1: 0");
-        lblLP2 = new JLabel("LP Jugador 2: 0");
-        txtHistorial = new JTextArea(10, 30);
-        txtHistorial.setEditable(false);
-        scrollHistorial = new JScrollPane(txtHistorial);
-        
-        add(lblLP1);
-        add(lblLP2);
-        add(btnAtacar);
-        add(scrollHistorial);
+        setLocationRelativeTo(null);
     }
     
-    // 4. Métodos del UML
+    // Métodos del UML (la vista no tiene lógica de negocio)
     public void agregarListener(ActionListener l) {
         btnAtacar.addActionListener(l);
     }
     
     public void mostrar(String msg) {
         txtHistorial.append(msg + "\n");
+        txtHistorial.setCaretPosition(txtHistorial.getDocument().getLength());
     }
     
     public void actualizarLP(int lp1, int lp2) {
         lblLP1.setText("LP Jugador 1: " + lp1);
         lblLP2.setText("LP Jugador 2: " + lp2);
-    
-    
-}
+    }
+
+    public void habilitarAtaque(boolean habilitado) {
+        btnAtacar.setEnabled(habilitado);
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -67,17 +45,55 @@ public class VistaBatalla extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        lblLP1 = new javax.swing.JLabel();
+        lblLP2 = new javax.swing.JLabel();
+        btnAtacar = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        txtHistorial = new javax.swing.JTextArea();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Simulador de Batalla Yu-Gi-Oh!");
+
+        lblLP1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        lblLP1.setText("LP Jugador 1: 0");
+
+        lblLP2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        lblLP2.setText("LP Jugador 2: 0");
+
+        btnAtacar.setText("Atacar");
+
+        txtHistorial.setEditable(false);
+        txtHistorial.setColumns(20);
+        txtHistorial.setRows(10);
+        jScrollPane1.setViewportView(txtHistorial);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 380, Short.MAX_VALUE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(lblLP1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 100, Short.MAX_VALUE)
+                        .addComponent(lblLP2))
+                    .addComponent(btnAtacar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblLP1)
+                    .addComponent(lblLP2))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnAtacar)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         pack();
@@ -109,5 +125,10 @@ public class VistaBatalla extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnAtacar;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel lblLP1;
+    private javax.swing.JLabel lblLP2;
+    private javax.swing.JTextArea txtHistorial;
     // End of variables declaration//GEN-END:variables
 }

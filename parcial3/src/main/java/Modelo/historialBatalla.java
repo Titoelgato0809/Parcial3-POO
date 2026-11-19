@@ -3,6 +3,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package Modelo;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
 /**
@@ -17,7 +20,22 @@ public class historialBatalla {
         System.out.println("Registro añadido: " + lineas);
     }
 
+    public List<String> getRegistros() {
+        return registros;
+    }
+
     public void guardar() {
-        System.out.println("Guardando historial de batalla en archivo .txt...");
+        guardar("historial_combate.txt");
+    }
+
+    public void guardar(String ruta) {
+        try (PrintWriter pw = new PrintWriter(new FileWriter(ruta))) {
+            for (String linea : registros) {
+                pw.println(linea);
+            }
+            System.out.println("Historial guardado en " + ruta);
+        } catch (IOException e) {
+            System.out.println("No se pudo guardar el historial: " + e.getMessage());
+        }
     }
 }

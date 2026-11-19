@@ -31,6 +31,7 @@ public class Parcial3 {
         m2.setNombre("Dragón Blanco de Ojos Azules");
         m2.setATQ(3000);
         m2.setDEF(2500);
+        m2.setPosicion(true);
 
      
         j1.agregarCarta(m1);
@@ -38,17 +39,8 @@ public class Parcial3 {
 
    
         VistaBatalla vista = new VistaBatalla();
-        ControoladorBatalla controlador = new ControoladorBatalla();
-
-        vista.actualizarLP(j1.Lp, j2.Lp);
-        
-   
-        vista.agregarListener(e -> {
-            controlador.calcularDanio(m1, m2);
-            vista.mostrar(m1.getNombre() + " atacó a " + m2.getNombre());
-            controlador.guardarHistorialBatalla();
-        });
-
+        ControoladorBatalla controlador = new ControoladorBatalla(vista, j1, j2);
+        controlador.iniciar();
 
         vista.setVisible(true);
 
@@ -70,4 +62,3 @@ public class Parcial3 {
         System.out.println("\nReporte general de batalla finalizado.");
     }
 }
-   

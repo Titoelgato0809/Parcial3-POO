@@ -20,7 +20,19 @@ public class Jugador {
     }
 
     public void recibirDanio(int cantidad) {
-        this.Lp -= cantidad;
+        this.Lp = Math.max(0, this.Lp - cantidad);
         System.out.println(nombre + " recibe " + cantidad + " de daño. LP restantes: " + this.Lp);
+    }
+
+    public boolean estaDerrotado() {
+        return Lp <= 0;
+    }
+
+    public boolean tieneMonstruos() {
+        return !cartas.isEmpty();
+    }
+
+    public void eliminarCarta(Monstruo m) {
+        cartas.remove(m);
     }
 }

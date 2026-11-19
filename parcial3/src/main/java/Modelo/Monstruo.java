@@ -52,6 +52,12 @@ public abstract class Monstruo {
     }
     
     public abstract void atacar();
+
+    
+    public int calcularDiferencia(Monstruo defensor) {
+        int valorDefensor = defensor.isPosicion() ? defensor.getATQ() : defensor.getDEF();
+        return this.ATQ - valorDefensor;
+    }
         
     
 }
