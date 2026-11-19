@@ -46,5 +46,8 @@ public class Monstruo {
         this.posicion = posicion;
     }
     
-    
+    @Override
+    public String toString(){
+        return "Carta: " + nombre + " - ATQ: " + ATQ + " - DEF: " + DEF;
+    }
 }
