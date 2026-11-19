@@ -34,6 +34,26 @@
                       <Component id="lblLP2" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <Component id="btnAtacar" alignment="0" max="32767" attributes="0"/>
+                  <Component id="btnCrear" alignment="0" max="32767" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="lblJugador" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblTipo" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblNombre" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblATQ" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblDEF" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblPosicion" alignment="0" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="cmbJugador" alignment="0" pref="200" max="32767" attributes="0"/>
+                          <Component id="cmbTipo" alignment="0" pref="200" max="32767" attributes="0"/>
+                          <Component id="txtNombre" alignment="0" pref="200" max="32767" attributes="0"/>
+                          <Component id="txtATQ" alignment="0" pref="200" max="32767" attributes="0"/>
+                          <Component id="txtDEF" alignment="0" pref="200" max="32767" attributes="0"/>
+                          <Component id="cmbPosicion" alignment="0" pref="200" max="32767" attributes="0"/>
+                      </Group>
+                  </Group>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
@@ -48,9 +68,41 @@
                   <Component id="lblLP2" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="lblJugador" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="cmbJugador" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="lblTipo" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="cmbTipo" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="lblNombre" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtNombre" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="lblATQ" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtATQ" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="lblDEF" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtDEF" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="lblPosicion" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="cmbPosicion" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="btnCrear" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
               <Component id="btnAtacar" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="jScrollPane1" pref="200" max="32767" attributes="0"/>
+              <Component id="jScrollPane1" pref="140" max="32767" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
@@ -73,6 +125,86 @@
         <Property name="text" type="java.lang.String" value="LP Jugador 2: 0"/>
       </Properties>
     </Component>
+    <Component class="javax.swing.JLabel" name="lblJugador">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Jugador:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblTipo">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Tipo:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblNombre">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Nombre:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblATQ">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="ATQ:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblDEF">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="DEF:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblPosicion">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Posición:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JComboBox" name="cmbJugador">
+      <Properties>
+        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+          <StringArray count="2">
+            <StringItem index="0" value="Jugador 1"/>
+            <StringItem index="1" value="Jugador 2"/>
+          </StringArray>
+        </Property>
+      </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+      </AuxValues>
+    </Component>
+    <Component class="javax.swing.JComboBox" name="cmbTipo">
+      <Properties>
+        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+          <StringArray count="2">
+            <StringItem index="0" value="Común"/>
+            <StringItem index="1" value="Mágico"/>
+          </StringArray>
+        </Property>
+      </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+      </AuxValues>
+    </Component>
+    <Component class="javax.swing.JComboBox" name="cmbPosicion">
+      <Properties>
+        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+          <StringArray count="2">
+            <StringItem index="0" value="Ataque"/>
+            <StringItem index="1" value="Defensa"/>
+          </StringArray>
+        </Property>
+      </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+      </AuxValues>
+    </Component>
+    <Component class="javax.swing.JTextField" name="txtNombre">
+    </Component>
+    <Component class="javax.swing.JTextField" name="txtATQ">
+    </Component>
+    <Component class="javax.swing.JTextField" name="txtDEF">
+    </Component>
+    <Component class="javax.swing.JButton" name="btnCrear">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Crear monstruo"/>
+      </Properties>
+    </Component>
     <Component class="javax.swing.JButton" name="btnAtacar">
       <Properties>
         <Property name="text" type="java.lang.String" value="Atacar"/>
@@ -89,7 +221,7 @@
           <Properties>
             <Property name="editable" type="boolean" value="false"/>
             <Property name="columns" type="int" value="20"/>
-            <Property name="rows" type="int" value="10"/>
+            <Property name="rows" type="int" value="8"/>
           </Properties>
         </Component>
       </SubComponents>

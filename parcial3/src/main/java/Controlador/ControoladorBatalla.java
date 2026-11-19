@@ -3,7 +3,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package Controlador;
+import Modelo.Comunes;
 import Modelo.Jugador;
+import Modelo.Magico;
 import Modelo.Monstruo;
 import Modelo.historialBatalla;
 import Vista.VistaBatalla;
@@ -27,9 +29,53 @@ public class ControoladorBatalla {
 
     // Enlaza el evento del botón de la vista con la lógica de este controlador
     public void iniciar() {
+        vista.setNombresJugadores(jugador1.nombre, jugador2.nombre);
         vista.agregarListener(e -> ejecutarTurno());
+        vista.agregarListenerCrear(e -> crearMonstruo());
         vista.actualizarLP(jugador1.Lp, jugador2.Lp);
         vista.mostrar("Turno de " + jugador1.nombre);
+    }
+
+    // RF2: crea un monstruo con los datos del formulario y se lo asigna al jugador elegido
+    private void crearMonstruo() {
+        String nombre = vista.getNombreMonstruo().trim();
+        if (nombre.isEmpty()) {
+            vista.mostrarError("El nombre del monstruo no puede estar vacío.");
+            return;
+        }
+
+        int atq;
+        int def;
+        try {
+            atq = Integer.parseInt(vista.getATQ().trim());
+            def = Integer.parseInt(vista.getDEF().trim());
+        } catch (NumberFormatException ex) {
+            vista.mostrarError("ATQ y DEF deben ser números enteros (sin letras).");
+            return;
+        }
+        if (atq < 0 || def < 0) {
+            vista.mostrarError("ATQ y DEF no pueden ser negativos.");
+            return;
+        }
+
+        boolean enAtaque = vista.isPosicionAtaque();
+        Monstruo nuevo;
+        if (vista.getTipo() == 1) {
+            Magico magico = new Magico();
+            magico.setNombre(nombre);
+            magico.setATQ(atq);
+            magico.setDEF(def);
+            magico.setPosicion(enAtaque);
+            nuevo = magico;
+        } else {
+            nuevo = new Comunes(nombre, atq, def, enAtaque);
+        }
+
+        Jugador dueno = vista.getJugadorSeleccionado() == 0 ? jugador1 : jugador2;
+        dueno.agregarCarta(nuevo);
+        registrar("Se creó " + nuevo.getNombre() + " (ATQ " + atq + " / DEF " + def + ", "
+                + (enAtaque ? "ataque" : "defensa") + ") para " + dueno.nombre + ".");
+        vista.limpiarCampos();
     }
 
     private void ejecutarTurno() {
@@ -62,7 +108,7 @@ public class ControoladorBatalla {
         vista.mostrar("Turno de " + (turnoJugador1 ? jugador1.nombre : jugador2.nombre));
     }
 
- 
+    // Se mantiene el método del UML (sin tocar LP) para registrar un ataque simple
     public void calcularDanio(Monstruo atacante, Monstruo defensor) {
         int danio = atacante.calcularDiferencia(defensor);
         if (danio > 0) {
@@ -72,7 +118,7 @@ public class ControoladorBatalla {
         }
     }
 
-    
+    // Versión completa: aplica la tabla de posiciones, baja LP y destruye monstruos
     public void calcularDanio(Jugador duenoAtacante, Monstruo atacante, Jugador duenoDefensor, Monstruo defensor) {
         int diferencia = atacante.calcularDiferencia(defensor);
         boolean defensorEnAtaque = defensor.isPosicion();
