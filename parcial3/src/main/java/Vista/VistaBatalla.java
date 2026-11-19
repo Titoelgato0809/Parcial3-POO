@@ -24,6 +24,18 @@ public class VistaBatalla extends javax.swing.JFrame {
         setSize(400, 300);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLayout(new FlowLayout());
+        
+        btnAtacar = new JButton("Atacar");
+        lblLP1 = new JLabel("LP Jugador 1: 0");
+        lblLP2 = new JLabel("LP Jugador 2: 0");
+        txtHistorial = new JTextArea(10, 30);
+        txtHistorial.setEditable(false);
+        scrollHistorial = new JScrollPane(txtHistorial);btnAtacar = new JButton("Atacar");
+        lblLP1 = new JLabel("LP Jugador 1: 0");
+        lblLP2 = new JLabel("LP Jugador 2: 0");
+        txtHistorial = new JTextArea(10, 30);
+        txtHistorial.setEditable(false);
+        scrollHistorial = new JScrollPane(txtHistorial);
 
     /**
      * Creates new form VistaBatalla
