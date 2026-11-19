@@ -21,4 +21,7 @@ public class ControoladorBatalla {
             historial.registrar(atacante.getNombre() + " atacó a " + defensor.getNombre() + " pero no hizo daño.");
         }
     }
+    public void guardarHistorialBatalla() {
+        historial.guardar();
+    }
 }
