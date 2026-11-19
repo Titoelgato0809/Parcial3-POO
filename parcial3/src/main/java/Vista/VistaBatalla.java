@@ -18,14 +18,17 @@ public class VistaBatalla extends javax.swing.JFrame {
     private JTextArea txtHistorial;
     private JScrollPane scrollHistorial; 
     
-    
+    public VistaBatalla() {
+        // Configuración básica de la ventana
+        setTitle("Simulador de Batalla Yu-Gi-Oh!");
+        setSize(400, 300);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setLayout(new FlowLayout());
 
     /**
      * Creates new form VistaBatalla
      */
-    public VistaBatalla() {
-        initComponents();
-    }
+
 
     /**
      * This method is called from within the constructor to initialize the form.
