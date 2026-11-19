@@ -10,4 +10,12 @@ import static org.junit.jupiter.api.Assertions.*;
 import Modelo.historialBatalla;
 
 public class HistorialBatallaTest {
+    @Test
+    void registrarAgregaLineas() {
+        historialBatalla h = new historialBatalla();
+        h.registrar("linea 1");
+        h.registrar("linea 2");
+        assertEquals(2, h.getRegistros().size());
+        assertEquals("linea 2", h.getRegistros().get(1));
+    }
 }
