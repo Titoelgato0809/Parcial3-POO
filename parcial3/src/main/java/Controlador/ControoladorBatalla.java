@@ -12,4 +12,13 @@ import Modelo.historialBatalla;
 public class ControoladorBatalla {
     
     private historialBatalla historial = new historialBatalla();
+    
+    public void calcularDanio(Monstruo atacante, Monstruo defensor) {
+        int danio = atacante.getATQ() - defensor.getDEF();
+        if (danio > 0) {
+            historial.registrar(atacante.getNombre() + " hizo " + danio + " de daño a " + defensor.getNombre());
+        } else {
+            historial.registrar(atacante.getNombre() + " atacó a " + defensor.getNombre() + " pero no hizo daño.");
+        }
+    }
 }
