@@ -10,7 +10,7 @@ import Modelo.Monstruo;
  */
 public class Comunes extends Monstruo{
     
-    Comunes(String nombre, int ATQ, int DEF, boolean posicion){
+    public Comunes(String nombre, int ATQ, int DEF, boolean posicion){
         this.nombre = nombre;
         this.ATQ = ATQ;
         this.DEF = DEF;
@@ -18,6 +18,10 @@ public class Comunes extends Monstruo{
     }
     
 
-
+    @Override
+    public void atacar(){
+        System.out.println(nombre +" ataca con: "+ ATQ +" de daño");
+    }
+    
     
 }
