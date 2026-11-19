@@ -50,6 +50,11 @@ public class VistaBatalla extends javax.swing.JFrame {
     public void mostrar(String msg) {
         txtHistorial.append(msg + "\n");
     }
+    
+    public void actualizarLP(int lp1, int lp2) {
+        lblLP1.setText("LP Jugador 1: " + lp1);
+        lblLP2.setText("LP Jugador 2: " + lp2);
+    }
 
     /**
      * Creates new form VistaBatalla
