@@ -11,6 +11,8 @@ import java.awt.event.ActionListener;
  * @author Titoelgato
  */
 public class VistaBatalla extends javax.swing.JFrame {
+   
+    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(VistaBatalla.class.getName());
     
     private JButton btnAtacar;
     private JLabel lblLP1;
@@ -52,8 +54,9 @@ public class VistaBatalla extends javax.swing.JFrame {
     public void actualizarLP(int lp1, int lp2) {
         lblLP1.setText("LP Jugador 1: " + lp1);
         lblLP2.setText("LP Jugador 2: " + lp2);
-    }
-
+    
+    
+}
 
     /**
      * This method is called from within the constructor to initialize the form.
