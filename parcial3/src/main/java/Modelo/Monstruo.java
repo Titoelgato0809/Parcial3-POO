@@ -8,7 +8,7 @@ package Modelo;
  *
  * @author Titoelgato
  */
-public class Monstruo {
+public abstract class Monstruo {
     protected String nombre;
     protected int ATQ;
     protected int DEF;
@@ -50,4 +50,8 @@ public class Monstruo {
     public String toString(){
         return "Carta: " + nombre + " - ATQ: " + ATQ + " - DEF: " + DEF;
     }
+    
+    public abstract void atacar();
+        
+    
 }
