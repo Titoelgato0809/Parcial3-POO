@@ -9,5 +9,8 @@ package Modelo;
  * @author Titoelgato
  */
 public class Monstruo {
-    
+    protected String nombre;
+    protected int ATQ;
+    protected int DEF;
+    protected boolean posicion;
 }
