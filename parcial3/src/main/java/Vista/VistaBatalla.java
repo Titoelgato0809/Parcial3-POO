@@ -46,6 +46,10 @@ public class VistaBatalla extends javax.swing.JFrame {
     public void agregarListener(ActionListener l) {
         btnAtacar.addActionListener(l);
     }
+    
+    public void mostrar(String msg) {
+        txtHistorial.append(msg + "\n");
+    }
 
     /**
      * Creates new form VistaBatalla
